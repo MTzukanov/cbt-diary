@@ -9,6 +9,13 @@ and no runtime dependencies.
 All data stays in your browser's `localStorage`. Nothing is sent anywhere. Export regularly as a
 backup.
 
+## Entries from an AI chat
+
+**New entry -> Or talk it through with an AI chat** copies a prompt built from your fields and
+emotions. Paste it into ChatGPT, Claude, Gemini or another chat; it interviews you and ends with a
+JSON block (`"format": "cbt-diary/v1"`). Paste that back, review the entries, and save the ones you
+want. The app itself still sends nothing anywhere; the chat is a service you choose.
+
 ## Run locally
 
 ES modules do not load from `file://`, so serve the folder:

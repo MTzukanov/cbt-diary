@@ -413,3 +413,32 @@ textarea { resize: none; overflow: hidden; line-height: 1.45; }
 .guide-example dd { margin: 0 0 10px; }
 .guide-example dd:last-child { margin-bottom: 0; }
 .empty .btn { margin-top: 8px; }
+
+/* Entries from an AI chat */
+.ai-link { display: block; margin: 0 4px 12px; color: var(--accent); text-decoration: none; }
+.button-grid .span-all { grid-column: 1 / -1; }
+.prompt-details { margin: 12px 0; font-size: 0.9rem; }
+.prompt-details summary { color: var(--accent); cursor: pointer; min-height: 32px; }
+.prompt-text {
+  max-height: 16em;
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  overflow: auto;
+  border-radius: 10px;
+  background: var(--surface-2);
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+textarea.paste-box { min-height: 9em; max-height: 50vh; overflow: auto; resize: vertical; font-size: 16px; }
+.paste-box + .form-actions { margin-top: 12px; }
+.import-summary { margin: 0 4px 12px; }
+.import-error { color: var(--danger); }
+.import-item { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; cursor: pointer; }
+.import-item input[type="checkbox"] { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--accent); }
+.import-body { min-width: 0; }
+.import-warn { margin: 4px 0 0; color: var(--danger); }
+.import-fields { margin: 8px 0 0; }
+.import-fields dt { font-weight: 600; font-size: 0.85rem; color: var(--muted); }
+.import-fields dd { margin: 0 0 8px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.import-fields dd:last-child { margin-bottom: 0; }

@@ -19,6 +19,7 @@ export function form(ctx, id) {
   const fields = store.data.settings.fields.filter((f) => !f.hidden);
 
   const body = html`
+    ${!existing && html`<a class="ai-link small" href="#/ai">${t('ai.link')} &rarr;</a>`}
     <form id="entry-form" class="entry-form" autocomplete="off">
       <label class="field card">
         <span class="field-label">${t('field.datetime')}</span>

@@ -6,6 +6,7 @@ import * as entry from './views/entry.js';
 import * as charts from './views/charts.js';
 import * as settings from './views/settings.js';
 import * as guide from './views/guide.js';
+import * as ai from './views/ai.js';
 
 const ICONS = {
   diary: html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v16H6.5A1.5 1.5 0 0 0 5 20.5z"/><path d="M5 20.5A1.5 1.5 0 0 0 6.5 22H19v-3"/><path d="M9 7h6M9 11h6"/></svg>`,
@@ -25,6 +26,7 @@ const TABS = [
 const ROUTES = [
   [/^\/$/, diary.list],
   [/^\/new$/, entry.form],
+  [/^\/ai$/, ai.view],
   [/^\/edit\/([\w-]+)$/, entry.form],
   [/^\/charts$/, charts.view],
   [/^\/guide$/, guide.view],
