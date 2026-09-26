@@ -120,6 +120,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .tabbar a[aria-current="page"] { color: var(--accent); font-weight: 600; }
 
 .tabbar svg { width: 24px; height: 24px; }
+.tabbar span { max-width: 100%; padding: 0 2px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 
 .muted { color: var(--muted); }
 
@@ -402,3 +403,15 @@ textarea { resize: none; overflow: hidden; line-height: 1.45; }
 
 .legend-static { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0 0 8px; font-size: 0.9rem; color: var(--muted); }
 .legend-static > span { display: inline-flex; align-items: center; gap: 6px; }
+
+/* Guide */
+.guide-intro { margin: 4px 4px var(--gap); font-size: 1.05rem; }
+.guide ol, .guide ul { margin: 0; padding-left: 1.3em; }
+.guide li { margin-bottom: 6px; }
+.guide li:last-child { margin-bottom: 0; }
+.guide p { margin: 12px 0 0; color: var(--muted); }
+.guide-example dl { margin: 0; }
+.guide-example dt { font-weight: 600; font-size: 0.9rem; color: var(--muted); }
+.guide-example dd { margin: 0 0 10px; }
+.guide-example dd:last-child { margin-bottom: 0; }
+.empty .btn { margin-top: 8px; }

@@ -7,7 +7,12 @@ export function list(ctx) {
   const { entries, settings } = ctx.store.data;
   const fab = html`<a class="fab" href="#/new" aria-label="${t('entry.new')}">+</a>`;
   if (!entries.length) {
-    return { body: html`<p class="empty muted">${t('diary.empty')}</p>${fab}` };
+    return {
+      body: html`<div class="empty">
+          <p class="muted">${t('diary.empty')}</p>
+          <a class="btn" href="#/guide">${t('diary.readGuide')}</a>
+        </div>${fab}`,
+    };
   }
 
   const textFields = settings.fields.filter((f) => f.type === 'text' && !f.hidden);

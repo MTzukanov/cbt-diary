@@ -2,6 +2,7 @@ export default {
   'app.title': 'KKT-päiväkirja',
   'nav.diary': 'Päiväkirja',
   'nav.charts': 'Kaaviot',
+  'nav.guide': 'Opas',
   'nav.settings': 'Asetukset',
 
   'entry.new': 'Uusi merkintä',
@@ -51,6 +52,7 @@ export default {
   'error.quota': 'Tallennustila on täynnä. Vie tiedot ja poista sitten vanhoja merkintöjä.',
 
   'diary.empty': 'Ei vielä merkintöjä. Napauta + ja kuvaa tilanne, joka herätti tunteen.',
+  'diary.readGuide': 'Näin pidät päiväkirjaa',
   'charts.empty': 'Kaaviot näkyvät, kun sinulla on merkintöjä, joissa tunteet on arvioitu.',
 
   'charts.range': 'Ajanjakso',

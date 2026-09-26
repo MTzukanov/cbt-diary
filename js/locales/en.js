@@ -2,6 +2,7 @@ export default {
   'app.title': 'CBT Diary',
   'nav.diary': 'Diary',
   'nav.charts': 'Charts',
+  'nav.guide': 'Guide',
   'nav.settings': 'Settings',
 
   'entry.new': 'New entry',
@@ -51,6 +52,7 @@ export default {
   'error.quota': 'Storage is full. Export your data, then delete old entries.',
 
   'diary.empty': 'No entries yet. Tap + to describe a situation that stirred an emotion.',
+  'diary.readGuide': 'How to keep the diary',
   'charts.empty': 'Charts appear once you have entries with rated emotions.',
 
   'charts.range': 'Period',

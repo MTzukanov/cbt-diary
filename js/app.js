@@ -5,16 +5,19 @@ import * as diary from './views/diary.js';
 import * as entry from './views/entry.js';
 import * as charts from './views/charts.js';
 import * as settings from './views/settings.js';
+import * as guide from './views/guide.js';
 
 const ICONS = {
   diary: html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v16H6.5A1.5 1.5 0 0 0 5 20.5z"/><path d="M5 20.5A1.5 1.5 0 0 0 6.5 22H19v-3"/><path d="M9 7h6M9 11h6"/></svg>`,
   charts: html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v16h16"/><path d="M7 15l4-5 3 3 5-7"/></svg>`,
+  guide: html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.8V16h5v-.3c0-.7.4-1.4 1-1.8A6 6 0 0 0 12 3z"/></svg>`,
   settings: html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>`,
 };
 
 const TABS = [
   { path: '/', label: 'nav.diary', icon: ICONS.diary },
   { path: '/charts', label: 'nav.charts', icon: ICONS.charts },
+  { path: '/guide', label: 'nav.guide', icon: ICONS.guide },
   { path: '/settings', label: 'nav.settings', icon: ICONS.settings },
 ];
 
@@ -24,6 +27,7 @@ const ROUTES = [
   [/^\/new$/, entry.form],
   [/^\/edit\/([\w-]+)$/, entry.form],
   [/^\/charts$/, charts.view],
+  [/^\/guide$/, guide.view],
   [/^\/settings$/, settings.view],
 ];
 
