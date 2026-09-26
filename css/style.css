@@ -243,3 +243,10 @@ textarea { resize: none; overflow: hidden; line-height: 1.45; }
   cursor: pointer;
 }
 .chip-own { border-style: dashed; background: transparent; color: var(--accent); }
+
+.small { font-size: 0.9rem; }
+.card p { margin: 0 0 12px; }
+
+.button-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.button-grid .btn { width: 100%; padding: 0 10px; text-align: center; }
+.btn:disabled { opacity: 0.45; cursor: default; }

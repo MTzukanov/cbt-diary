@@ -54,4 +54,17 @@ export default {
   'charts.empty': 'Kaaviot näkyvät, kun sinulla on merkintöjä, joissa tunteet on arvioitu.',
 
   'settings.language': 'Kieli',
+
+  'settings.data': 'Tietosi',
+  'settings.dataNote': 'Kaikki tallennetaan vain tälle laitteelle, tähän selaimeen. Vie tiedot säännöllisesti varmuuskopioksi.',
+  'settings.entries': { one: '{n} merkintä', other: '{n} merkintää' },
+  'settings.exportJson': 'Vie JSON',
+  'settings.exportText': 'Vie teksti',
+  'settings.import': 'Tuo JSON',
+  'settings.importDone': 'Tuotu: {added} uutta, {updated} päivitetty.',
+  'settings.importInvalid': 'Tämä tiedosto ei ole KKT-päiväkirjan JSON-vienti.',
+  'settings.deleteAll': 'Poista kaikki',
+  'settings.deleteAllConfirm': 'Poistetaanko kaikki merkinnät ({n}) tältä laitteelta? Vie ne ensin, jos haluat säilyttää ne.',
+
+  'export.exported': 'Viety {date}',
 };

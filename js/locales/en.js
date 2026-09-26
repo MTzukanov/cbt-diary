@@ -54,4 +54,17 @@ export default {
   'charts.empty': 'Charts appear once you have entries with rated emotions.',
 
   'settings.language': 'Language',
+
+  'settings.data': 'Your data',
+  'settings.dataNote': 'Everything is stored only on this device, in this browser. Export regularly as a backup.',
+  'settings.entries': { one: '{n} entry', other: '{n} entries' },
+  'settings.exportJson': 'Export JSON',
+  'settings.exportText': 'Export text',
+  'settings.import': 'Import JSON',
+  'settings.importDone': 'Imported: {added} new, {updated} updated.',
+  'settings.importInvalid': 'This file is not a CBT Diary JSON export.',
+  'settings.deleteAll': 'Delete all',
+  'settings.deleteAllConfirm': 'Delete all {n} entries from this device? Export first if you want to keep them.',
+
+  'export.exported': 'Exported {date}',
 };

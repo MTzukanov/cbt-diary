@@ -54,4 +54,17 @@ export default {
   'charts.empty': 'Графіки з\'являться, коли будуть записи з оціненими емоціями.',
 
   'settings.language': 'Мова',
+
+  'settings.data': 'Ваші дані',
+  'settings.dataNote': 'Усе зберігається лише на цьому пристрої, у цьому браузері. Регулярно робіть експорт як резервну копію.',
+  'settings.entries': { one: '{n} запис', few: '{n} записи', many: '{n} записів', other: '{n} запису' },
+  'settings.exportJson': 'Експорт JSON',
+  'settings.exportText': 'Експорт тексту',
+  'settings.import': 'Імпорт JSON',
+  'settings.importDone': 'Імпортовано: нових {added}, оновлено {updated}.',
+  'settings.importInvalid': 'Цей файл не є JSON-експортом Щоденника КПТ.',
+  'settings.deleteAll': 'Видалити все',
+  'settings.deleteAllConfirm': 'Видалити всі записи ({n}) з цього пристрою? Спершу зробіть експорт, якщо хочете їх зберегти.',
+
+  'export.exported': 'Експортовано {date}',
 };

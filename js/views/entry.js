@@ -2,10 +2,7 @@ import { t } from '../i18n.js';
 import { html } from '../dom.js';
 import { localDateTime, clampIntensity } from '../store.js';
 import { PRESET_EMOTIONS, emotionId, emotionLabel } from '../emotions.js';
-
-export function fieldLabel(field) {
-  return field.label || t(`field.${field.id}`);
-}
+import { fieldLabel } from '../fields.js';
 
 // Shared by #/new and #/edit/<id>.
 export function form(ctx, id) {
