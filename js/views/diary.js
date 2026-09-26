@@ -5,7 +5,9 @@ import { emotionLabel } from '../emotions.js';
 
 export function list(ctx) {
   const { entries, settings } = ctx.store.data;
-  const fab = html`<a class="fab" href="#/new" aria-label="${t('entry.new')}">+</a>`;
+  const fab = html`<a class="fab" href="#/new" aria-label="${t('entry.new')}">
+    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+  </a>`;
   if (!entries.length) {
     return {
       body: html`<div class="empty">

@@ -212,8 +212,6 @@ textarea { resize: none; overflow: hidden; line-height: 1.45; }
   border-radius: 50%;
   background: var(--accent);
   color: var(--accent-text);
-  font-size: 2rem;
-  line-height: 1;
   text-decoration: none;
   box-shadow: 0 4px 14px rgb(0 0 0 / 0.2);
 }
