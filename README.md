@@ -1,5 +1,7 @@
 # CBT Diary
 
+**Live:** https://mtzukanov.github.io/cbt-diary/
+
 A mobile-first diary for the CBT "SMER" method: **S**ituation, thoughts (**M**ysli),
 **E**motions, **R**eactions, plus conclusions. Plain HTML, CSS and JavaScript with no build step
 and no runtime dependencies.
@@ -36,3 +38,7 @@ npm test             # node --test, no dependencies
 
 `.github/workflows/deploy.yml` runs the tests and publishes the site to GitHub Pages on every push
 to `main`. In the repository settings, set **Pages -> Source** to **GitHub Actions** once.
+
+## License
+
+[MIT](LICENSE)
