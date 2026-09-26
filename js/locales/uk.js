@@ -55,6 +55,20 @@ export default {
 
   'settings.language': 'Мова',
 
+  'settings.fields': 'Поля',
+  'settings.fieldsNote': 'Перейменовуйте, приховуйте й упорядковуйте поля або додавайте власні. Приховані поля зберігають свій текст.',
+  'settings.fieldName': 'Назва поля',
+  'settings.show': 'Показувати',
+  'settings.moveUp': 'Вище',
+  'settings.moveDown': 'Нижче',
+  'settings.addField': '+ Додати поле',
+  'settings.newFieldPrompt': 'Назва нового поля',
+  'settings.deleteField': 'Видалити поле',
+  'settings.deleteFieldConfirm': 'Видалити поле «{name}»? Написаний у ньому текст більше не показуватиметься.',
+  'settings.ownEmotions': 'Ваші емоції',
+  'settings.ownEmotionsNote': 'Емоції, які ви додали самі. Якщо прибрати емоцію тут, минулі записи не зміняться.',
+  'settings.ownEmotionsEmpty': 'Поки що немає. Додайте через «+ своя» у записі.',
+
   'settings.data': 'Ваші дані',
   'settings.dataNote': 'Усе зберігається лише на цьому пристрої, у цьому браузері. Регулярно робіть експорт як резервну копію.',
   'settings.entries': { one: '{n} запис', few: '{n} записи', many: '{n} записів', other: '{n} запису' },

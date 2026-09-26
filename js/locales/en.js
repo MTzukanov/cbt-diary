@@ -55,6 +55,20 @@ export default {
 
   'settings.language': 'Language',
 
+  'settings.fields': 'Fields',
+  'settings.fieldsNote': 'Rename, hide or reorder the fields, or add your own. Hidden fields keep their text.',
+  'settings.fieldName': 'Field name',
+  'settings.show': 'Show',
+  'settings.moveUp': 'Move up',
+  'settings.moveDown': 'Move down',
+  'settings.addField': '+ Add field',
+  'settings.newFieldPrompt': 'Name of the new field',
+  'settings.deleteField': 'Delete field',
+  'settings.deleteFieldConfirm': 'Delete the field "{name}"? Text written in it will no longer be shown.',
+  'settings.ownEmotions': 'Your emotions',
+  'settings.ownEmotionsNote': 'Emotions you added yourself. Removing one here does not change past entries.',
+  'settings.ownEmotionsEmpty': 'None yet. Add one with "+ own" in an entry.',
+
   'settings.data': 'Your data',
   'settings.dataNote': 'Everything is stored only on this device, in this browser. Export regularly as a backup.',
   'settings.entries': { one: '{n} entry', other: '{n} entries' },

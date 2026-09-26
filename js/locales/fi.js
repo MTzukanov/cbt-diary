@@ -55,6 +55,20 @@ export default {
 
   'settings.language': 'Kieli',
 
+  'settings.fields': 'Kentät',
+  'settings.fieldsNote': 'Nimeä, piilota tai järjestä kenttiä uudelleen, tai lisää omia. Piilotetut kentät säilyttävät tekstinsä.',
+  'settings.fieldName': 'Kentän nimi',
+  'settings.show': 'Näytä',
+  'settings.moveUp': 'Siirrä ylös',
+  'settings.moveDown': 'Siirrä alas',
+  'settings.addField': '+ Lisää kenttä',
+  'settings.newFieldPrompt': 'Uuden kentän nimi',
+  'settings.deleteField': 'Poista kenttä',
+  'settings.deleteFieldConfirm': 'Poistetaanko kenttä "{name}"? Siihen kirjoitettua tekstiä ei enää näytetä.',
+  'settings.ownEmotions': 'Omat tunteet',
+  'settings.ownEmotionsNote': 'Itse lisäämäsi tunteet. Poistaminen tästä ei muuta aiempia merkintöjä.',
+  'settings.ownEmotionsEmpty': 'Ei vielä yhtään. Lisää merkinnässä kohdasta "+ oma".',
+
   'settings.data': 'Tietosi',
   'settings.dataNote': 'Kaikki tallennetaan vain tälle laitteelle, tähän selaimeen. Vie tiedot säännöllisesti varmuuskopioksi.',
   'settings.entries': { one: '{n} merkintä', other: '{n} merkintää' },
