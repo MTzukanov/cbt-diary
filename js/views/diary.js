@@ -13,6 +13,7 @@ export function list(ctx) {
       body: html`<div class="empty">
           <p class="muted">${t('diary.empty')}</p>
           <a class="btn" href="#/guide">${t('diary.readGuide')}</a>
+          <a class="btn" href="#/ai">${t('ai.title')}</a>
         </div>${fab}`,
     };
   }
