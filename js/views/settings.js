@@ -78,6 +78,7 @@ export function view(ctx) {
 
       root.querySelector('#import').addEventListener('change', async (e) => {
         const file = e.target.files[0];
+        e.target.value = '';
         if (!file) return;
         let incoming = null;
         try {

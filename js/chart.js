@@ -214,7 +214,7 @@ export function mountLineChart(el, { start, end, series, formatDay, formatFullDa
     document.addEventListener('pointerdown', outside);
   }
 
-  let lastWidth = 0;
+  let lastWidth = el.clientWidth;
   const ro = new ResizeObserver(() => {
     if (!el.isConnected) return ro.disconnect();
     if (el.clientWidth !== lastWidth) {
