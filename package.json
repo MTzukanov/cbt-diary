@@ -1,0 +1,10 @@
+{
+  "name": "cbt-diary",
+  "private": true,
+  "type": "module",
+  "description": "Mobile-first CBT (SMER) diary. Static site, data stays in the browser.",
+  "scripts": {
+    "test": "node --test",
+    "serve": "python3 -m http.server 8080"
+  }
+}
