@@ -8,6 +8,8 @@ export default {
   'entry.edit': 'Редактировать запись',
   'entry.save': 'Сохранить',
   'entry.cancel': 'Отмена',
+  'entry.delete': 'Удалить',
+  'entry.deleteConfirm': 'Удалить эту запись? Это нельзя отменить.',
 
   'field.datetime': 'Дата и время',
   'field.situation': 'Ситуация',

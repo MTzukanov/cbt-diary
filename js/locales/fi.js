@@ -8,6 +8,8 @@ export default {
   'entry.edit': 'Muokkaa merkintää',
   'entry.save': 'Tallenna',
   'entry.cancel': 'Peruuta',
+  'entry.delete': 'Poista',
+  'entry.deleteConfirm': 'Poistetaanko tämä merkintä? Toimintoa ei voi perua.',
 
   'field.datetime': 'Päivä ja aika',
   'field.situation': 'Tilanne',

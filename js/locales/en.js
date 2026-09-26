@@ -8,6 +8,8 @@ export default {
   'entry.edit': 'Edit entry',
   'entry.save': 'Save',
   'entry.cancel': 'Cancel',
+  'entry.delete': 'Delete',
+  'entry.deleteConfirm': 'Delete this entry? This cannot be undone.',
 
   'field.datetime': 'Date and time',
   'field.situation': 'Situation',

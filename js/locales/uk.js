@@ -8,6 +8,8 @@ export default {
   'entry.edit': 'Редагувати запис',
   'entry.save': 'Зберегти',
   'entry.cancel': 'Скасувати',
+  'entry.delete': 'Видалити',
+  'entry.deleteConfirm': 'Видалити цей запис? Це не можна скасувати.',
 
   'field.datetime': 'Дата і час',
   'field.situation': 'Ситуація',

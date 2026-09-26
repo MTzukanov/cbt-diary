@@ -41,6 +41,7 @@ export function form(ctx, id) {
             </label>`,
       )}
       <div class="form-actions">
+        ${existing && html`<button class="btn btn-danger" type="button" id="delete">${t('entry.delete')}</button><span class="spacer"></span>`}
         <a class="btn" href="#/">${t('entry.cancel')}</a>
         <button class="btn btn-primary" type="submit">${t('entry.save')}</button>
       </div>
@@ -56,6 +57,12 @@ export function form(ctx, id) {
 
     const emotionsEl = root.querySelector('#emotions');
     if (emotionsEl) mountEmotions(emotionsEl, entry, store);
+
+    root.querySelector('#delete')?.addEventListener('click', () => {
+      if (!confirm(t('entry.deleteConfirm'))) return;
+      store.deleteEntry(existing.id);
+      ctx.go('/');
+    });
 
     formEl.addEventListener('submit', (ev) => {
       ev.preventDefault();
