@@ -53,6 +53,19 @@ export default {
   'diary.empty': 'Ei vielä merkintöjä. Napauta + ja kuvaa tilanne, joka herätti tunteen.',
   'charts.empty': 'Kaaviot näkyvät, kun sinulla on merkintöjä, joissa tunteet on arvioitu.',
 
+  'charts.range': 'Ajanjakso',
+  'charts.range.7': '7 päivää',
+  'charts.range.30': '30 päivää',
+  'charts.range.90': '90 päivää',
+  'charts.range.all': 'Kaikki',
+  'charts.noData': 'Tällä ajanjaksolla ei ole arvioituja tunteita.',
+  'charts.table': 'Näytä taulukkona',
+  'charts.date': 'Päivä',
+  'charts.intensity': 'Tunteiden voimakkuus',
+  'charts.intensityNote': 'Päivän korkein arvio. Napauta tunnetta näyttääksesi tai piilottaaksesi sen viivan.',
+  'charts.pickEmotions': 'Napauta yllä olevaa tunnetta piirtääksesi sen.',
+  'charts.maxSeries': 'Voit verrata enintään {n} tunnetta kerrallaan.',
+
   'settings.language': 'Kieli',
 
   'settings.fields': 'Kentät',

@@ -53,6 +53,19 @@ export default {
   'diary.empty': 'Записів ще немає. Натисніть +, щоб описати ситуацію, яка викликала емоцію.',
   'charts.empty': 'Графіки з\'являться, коли будуть записи з оціненими емоціями.',
 
+  'charts.range': 'Період',
+  'charts.range.7': '7 днів',
+  'charts.range.30': '30 днів',
+  'charts.range.90': '90 днів',
+  'charts.range.all': 'Усе',
+  'charts.noData': 'У цьому періоді немає оцінених емоцій.',
+  'charts.table': 'Показати таблицею',
+  'charts.date': 'Дата',
+  'charts.intensity': 'Сила емоцій',
+  'charts.intensityNote': 'Найвища оцінка за день. Натисніть на емоцію, щоб показати або сховати її лінію.',
+  'charts.pickEmotions': 'Натисніть на емоцію вище, щоб побудувати графік.',
+  'charts.maxSeries': 'Можна порівнювати до {n} емоцій одночасно.',
+
   'settings.language': 'Мова',
 
   'settings.fields': 'Поля',

@@ -53,6 +53,19 @@ export default {
   'diary.empty': 'No entries yet. Tap + to describe a situation that stirred an emotion.',
   'charts.empty': 'Charts appear once you have entries with rated emotions.',
 
+  'charts.range': 'Period',
+  'charts.range.7': '7 days',
+  'charts.range.30': '30 days',
+  'charts.range.90': '90 days',
+  'charts.range.all': 'All',
+  'charts.noData': 'No rated emotions in this period.',
+  'charts.table': 'Show as table',
+  'charts.date': 'Date',
+  'charts.intensity': 'Emotion intensity',
+  'charts.intensityNote': 'Highest rating per day. Tap an emotion to show or hide its line.',
+  'charts.pickEmotions': 'Tap an emotion above to plot it.',
+  'charts.maxSeries': 'You can compare up to {n} emotions at once.',
+
   'settings.language': 'Language',
 
   'settings.fields': 'Fields',
