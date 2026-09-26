@@ -16,6 +16,16 @@ npm run serve        # python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
+## Add to home screen
+
+- **iPhone (Safari):** Share -> Add to Home Screen.
+- **Android (Chrome):** menu -> Install app / Add to Home screen.
+
+`sw.js` caches the app so it opens offline. It serves the cached copy first and refreshes it in the
+background, so after a deploy (or a local edit) the new version appears on the *second* load. When
+you add a file under `js/`, `css/` or `icons/`, list it in `SHELL` in `sw.js`. A test checks this.
+Home-screen apps are also exempt from Safari's 7-day storage cleanup for websites.
+
 ## Test
 
 ```bash

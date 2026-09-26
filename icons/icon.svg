@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#3f6f8f"/>
+  <!-- Kept inside the central 80% so it survives maskable-icon cropping. -->
+  <rect x="146" y="118" width="220" height="276" rx="22" fill="#f6f3ee"/>
+  <rect x="146" y="118" width="34" height="276" rx="14" fill="#d9e4ea"/>
+  <path d="M212 190h118M212 238h118M212 286h70" stroke="#8aa8bb" stroke-width="16" stroke-linecap="round"/>
+  <path d="M300 330c10-22 30-22 40 0s30 22 40 0" fill="none" stroke="#eb6834" stroke-width="16" stroke-linecap="round" transform="translate(-60 0)"/>
+</svg>

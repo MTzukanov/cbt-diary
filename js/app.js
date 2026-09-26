@@ -85,3 +85,7 @@ function render(scrollTop = true) {
 
 window.addEventListener('hashchange', () => render());
 render();
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
