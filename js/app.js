@@ -1,3 +1,71 @@
-const app = document.getElementById('app');
+import { createStore } from './store.js';
+import { t, setLang, detectLang } from './i18n.js';
+import { html } from './dom.js';
+import * as diary from './views/diary.js';
+import * as charts from './views/charts.js';
+import * as settings from './views/settings.js';
 
-app.innerHTML = '<p class="muted">CBT Diary is loading...</p>';
+const ICONS = {
+  diary: html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v16H6.5A1.5 1.5 0 0 0 5 20.5z"/><path d="M5 20.5A1.5 1.5 0 0 0 6.5 22H19v-3"/><path d="M9 7h6M9 11h6"/></svg>`,
+  charts: html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v16h16"/><path d="M7 15l4-5 3 3 5-7"/></svg>`,
+  settings: html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>`,
+};
+
+const TABS = [
+  { path: '/', label: 'nav.diary', icon: ICONS.diary },
+  { path: '/charts', label: 'nav.charts', icon: ICONS.charts },
+  { path: '/settings', label: 'nav.settings', icon: ICONS.settings },
+];
+
+// Each view is (ctx, ...params) => { title?, back?, body, mount?(root) }.
+const ROUTES = [
+  [/^\/$/, diary.list],
+  [/^\/charts$/, charts.view],
+  [/^\/settings$/, settings.view],
+];
+
+const store = createStore();
+setLang(store.data.settings.lang || detectLang());
+
+const ctx = {
+  store,
+  go(path) {
+    location.hash = '#' + path;
+  },
+  refresh: () => render(false),
+  setLang(code) {
+    store.updateSettings((s) => (s.lang = code));
+    setLang(code);
+    render(false);
+  },
+};
+
+const appEl = document.getElementById('app');
+const titleEl = document.getElementById('title');
+const tabbarEl = document.getElementById('tabbar');
+
+function currentPath() {
+  return location.hash.replace(/^#/, '') || '/';
+}
+
+function render(scrollTop = true) {
+  const path = currentPath();
+  const route = ROUTES.map(([re, fn]) => [path.match(re), fn]).find(([m]) => m);
+  if (!route) return ctx.go('/');
+  const [match, view] = route;
+
+  const result = view(ctx, ...match.slice(1).map(decodeURIComponent));
+  document.title = t('app.title');
+  titleEl.textContent = result.title || t('app.title');
+  appEl.innerHTML = result.body;
+  result.mount?.(appEl);
+
+  tabbarEl.innerHTML = TABS.map(
+    (tab) => html`<a href="#${tab.path}" aria-current="${tab.path === path ? 'page' : 'false'}">${tab.icon}<span>${t(tab.label)}</span></a>`,
+  ).join('');
+
+  if (scrollTop) window.scrollTo(0, 0);
+}
+
+window.addEventListener('hashchange', () => render());
+render();
