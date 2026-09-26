@@ -2,6 +2,7 @@ import { createStore } from './store.js';
 import { t, setLang, detectLang } from './i18n.js';
 import { html } from './dom.js';
 import * as diary from './views/diary.js';
+import * as entry from './views/entry.js';
 import * as charts from './views/charts.js';
 import * as settings from './views/settings.js';
 
@@ -20,6 +21,8 @@ const TABS = [
 // Each view is (ctx, ...params) => { title?, back?, body, mount?(root) }.
 const ROUTES = [
   [/^\/$/, diary.list],
+  [/^\/new$/, entry.form],
+  [/^\/edit\/([\w-]+)$/, entry.form],
   [/^\/charts$/, charts.view],
   [/^\/settings$/, settings.view],
 ];
@@ -33,6 +36,18 @@ const ctx = {
     location.hash = '#' + path;
   },
   refresh: () => render(false),
+  // Runs a store write; returns false and warns instead of throwing when storage is full.
+  save(write) {
+    try {
+      write();
+    } catch (err) {
+      if (err?.name !== 'QuotaExceededError') throw err;
+      alert(t('error.quota'));
+      return false;
+    }
+    navigator.storage?.persist?.();
+    return true;
+  },
   setLang(code) {
     store.updateSettings((s) => (s.lang = code));
     setLang(code);
@@ -60,8 +75,9 @@ function render(scrollTop = true) {
   appEl.innerHTML = result.body;
   result.mount?.(appEl);
 
+  const active = TABS.find((tab) => tab.path !== '/' && path.startsWith(tab.path))?.path || '/';
   tabbarEl.innerHTML = TABS.map(
-    (tab) => html`<a href="#${tab.path}" aria-current="${tab.path === path ? 'page' : 'false'}">${tab.icon}<span>${t(tab.label)}</span></a>`,
+    (tab) => html`<a href="#${tab.path}" aria-current="${tab.path === active ? 'page' : 'false'}">${tab.icon}<span>${t(tab.label)}</span></a>`,
   ).join('');
 
   if (scrollTop) window.scrollTo(0, 0);
