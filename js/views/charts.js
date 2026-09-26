@@ -1,7 +1,7 @@
 import { t, getLang } from '../i18n.js';
 import { html } from '../dom.js';
 import { emotionId, emotionLabel } from '../emotions.js';
-import { RANGES, periodFor, entriesIn, emotionFrequency, emotionDaily, mountLineChart } from '../chart.js';
+import { RANGES, periodFor, entriesIn, emotionFrequency, emotionDaily, dailyStats, mountLineChart } from '../chart.js';
 
 const MAX_SERIES = 8;
 const DEFAULT_SERIES = 3;
@@ -43,6 +43,12 @@ export function view(ctx) {
     color: color(slot),
     points: emotionDaily(entries, id),
   }));
+
+  const daily = dailyStats(entries);
+  const dailySeries = [
+    { id: 'max', label: t('charts.peak'), color: color(0), points: daily.map((d) => ({ day: d.day, value: d.max })) },
+    { id: 'avg', label: t('charts.average'), color: color(1), points: daily.map((d) => ({ day: d.day, value: d.avg })) },
+  ];
 
   const body = html`
     <div class="segmented" role="group" aria-label="${t('charts.range')}">
@@ -88,6 +94,19 @@ export function view(ctx) {
             [t('charts.emotion'), t('charts.count'), t('charts.average')],
             freq.map((f) => [emotionLabel(f.emotion), f.count, formatAvg(f.avg)]),
           )}
+        </section>
+
+        <section class="card">
+          <h2>${t('charts.daily')}</h2>
+          <p class="muted small">${t('charts.dailyNote')}</p>
+          <div class="legend-static">
+            ${dailySeries.map((s) => html`<span><span class="chart-key" style="--c: ${s.color}"></span>${s.label}</span>`)}
+          </div>
+          <div id="daily-chart"></div>
+          ${table(
+            [t('charts.date'), t('charts.peak'), t('charts.average')],
+            daily.map((d) => [formatFullDay(d.day), d.max, formatAvg(d.avg)]),
+          )}
         </section>`}`;
 
   function mount(root) {
@@ -119,6 +138,11 @@ export function view(ctx) {
 
     const chartEl = root.querySelector('#intensity-chart');
     if (chartEl) mountLineChart(chartEl, { ...period, series, formatDay, formatFullDay });
+
+    const dailyEl = root.querySelector('#daily-chart');
+    if (dailyEl) {
+      mountLineChart(dailyEl, { ...period, series: dailySeries, formatDay, formatFullDay, formatValue: formatAvg, directLabels: true });
+    }
   }
 
   return { title: t('nav.charts'), body, mount };

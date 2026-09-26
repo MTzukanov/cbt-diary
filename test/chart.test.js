@@ -45,3 +45,12 @@ test('emotionDaily keeps the highest rating per day', () => {
     { day: '2026-09-10', value: 2 },
   ]);
 });
+
+test('dailyStats gives peak and average per day across emotions', async () => {
+  const { dailyStats } = await import('../js/chart.js');
+  assert.deepEqual(dailyStats(entries), [
+    { day: '2026-09-01', max: 8, avg: 5.8 },
+    { day: '2026-09-03', max: 9, avg: 7 },
+    { day: '2026-09-10', max: 2, avg: 2 },
+  ]);
+});

@@ -71,6 +71,9 @@ export default {
   'charts.emotion': 'Эмоция',
   'charts.count': 'Записей',
   'charts.average': 'Средняя',
+  'charts.daily': 'Пик и среднее за день',
+  'charts.dailyNote': 'По всем эмоциям, оценённым в этот день.',
+  'charts.peak': 'Пик',
 
   'settings.language': 'Язык',
 

@@ -65,6 +65,21 @@ export function emotionDaily(entries, id) {
   return [...byDay].sort(([a], [b]) => a.localeCompare(b)).map(([day, value]) => ({ day, value }));
 }
 
+// Peak and average of all emotion ratings per day, oldest first.
+export function dailyStats(entries) {
+  const byDay = new Map();
+  for (const e of entries) {
+    const day = e.datetime.slice(0, 10);
+    for (const em of e.emotions) {
+      if (!byDay.has(day)) byDay.set(day, []);
+      byDay.get(day).push(em.intensity);
+    }
+  }
+  return [...byDay]
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([day, v]) => ({ day, max: Math.max(...v), avg: Math.round((v.reduce((a, b) => a + b, 0) / v.length) * 10) / 10 }));
+}
+
 // ---- Rendering ----
 
 const HEIGHT = 200;
@@ -72,7 +87,7 @@ const TICKS_Y = [0, 2, 4, 6, 8, 10];
 
 // series: [{ id, label, color, points: [{ day, value }] }], values on a 0-10 scale.
 // directLabels puts each series' name at its last point when the labels do not collide.
-export function mountLineChart(el, { start, end, series, formatDay, formatFullDay, directLabels = false }) {
+export function mountLineChart(el, { start, end, series, formatDay, formatFullDay, formatValue = String, directLabels = false }) {
   el.classList.add('chart');
   el.tabIndex = 0;
   const tip = document.createElement('div');
@@ -153,7 +168,7 @@ export function mountLineChart(el, { start, end, series, formatDay, formatFullDa
       key.className = 'chart-key';
       key.style.setProperty('--c', s.color);
       const value = document.createElement('b');
-      value.textContent = v;
+      value.textContent = formatValue(v);
       const name = document.createElement('span');
       name.textContent = s.label;
       row.append(key, value, name);

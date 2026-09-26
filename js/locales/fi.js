@@ -71,6 +71,9 @@ export default {
   'charts.emotion': 'Tunne',
   'charts.count': 'Merkintöjä',
   'charts.average': 'Keskiarvo',
+  'charts.daily': 'Päivän huippu ja keskiarvo',
+  'charts.dailyNote': 'Kaikista päivän aikana arvioiduista tunteista.',
+  'charts.peak': 'Huippu',
 
   'settings.language': 'Kieli',
 

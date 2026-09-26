@@ -71,6 +71,9 @@ export default {
   'charts.emotion': 'Emotion',
   'charts.count': 'Entries',
   'charts.average': 'Average',
+  'charts.daily': 'Daily peak and average',
+  'charts.dailyNote': 'Across all emotions rated on each day.',
+  'charts.peak': 'Peak',
 
   'settings.language': 'Language',
 

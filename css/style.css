@@ -399,3 +399,6 @@ textarea { resize: none; overflow: hidden; line-height: 1.45; }
 .bar-track { display: flex; align-items: center; gap: 8px; min-width: 0; padding-right: 5em; }
 .bar { flex: none; height: 14px; min-width: 3px; border-radius: 0 4px 4px 0; background: var(--series-1); }
 .bar-value { flex: none; white-space: nowrap; margin-right: -5em; font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+
+.legend-static { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0 0 8px; font-size: 0.9rem; color: var(--muted); }
+.legend-static > span { display: inline-flex; align-items: center; gap: 6px; }
