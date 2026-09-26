@@ -70,6 +70,24 @@ export function view(ctx) {
               ...series.map((s) => s.points.find((p) => p.day === day)?.value ?? ''),
             ]),
           )}
+        </section>
+
+        <section class="card">
+          <h2>${t('charts.frequency')}</h2>
+          <p class="muted small">${t('charts.frequencyNote')}</p>
+          <ul class="bars">
+            ${freq.map((f) => html`<li class="bar-row">
+              <span class="bar-label">${emotionLabel(f.emotion)}</span>
+              <span class="bar-track">
+                <span class="bar" style="width: ${(f.count / freq[0].count) * 100}%"></span>
+                <span class="bar-value"><b>${f.count}</b> <span class="muted">${t('charts.avgValue', { v: formatAvg(f.avg) })}</span></span>
+              </span>
+            </li>`)}
+          </ul>
+          ${table(
+            [t('charts.emotion'), t('charts.count'), t('charts.average')],
+            freq.map((f) => [emotionLabel(f.emotion), f.count, formatAvg(f.avg)]),
+          )}
         </section>`}`;
 
   function mount(root) {
@@ -116,6 +134,10 @@ function table(head, rows) {
       </table>
     </div>
   </details>`;
+}
+
+function formatAvg(v) {
+  return new Intl.NumberFormat(getLang(), { maximumFractionDigits: 1 }).format(v);
 }
 
 function formatDay(day) {

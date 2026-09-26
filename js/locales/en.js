@@ -65,6 +65,12 @@ export default {
   'charts.intensityNote': 'Highest rating per day. Tap an emotion to show or hide its line.',
   'charts.pickEmotions': 'Tap an emotion above to plot it.',
   'charts.maxSeries': 'You can compare up to {n} emotions at once.',
+  'charts.frequency': 'How often each emotion came up',
+  'charts.frequencyNote': 'Number of entries with the emotion, and its average rating. This shows your leading emotional background.',
+  'charts.avgValue': 'avg {v}',
+  'charts.emotion': 'Emotion',
+  'charts.count': 'Entries',
+  'charts.average': 'Average',
 
   'settings.language': 'Language',
 

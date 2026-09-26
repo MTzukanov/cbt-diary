@@ -65,6 +65,12 @@ export default {
   'charts.intensityNote': 'Найвища оцінка за день. Натисніть на емоцію, щоб показати або сховати її лінію.',
   'charts.pickEmotions': 'Натисніть на емоцію вище, щоб побудувати графік.',
   'charts.maxSeries': 'Можна порівнювати до {n} емоцій одночасно.',
+  'charts.frequency': 'Як часто виникала кожна емоція',
+  'charts.frequencyNote': 'Кількість записів з емоцією та її середня оцінка. Так видно ваш провідний емоційний фон.',
+  'charts.avgValue': 'сер. {v}',
+  'charts.emotion': 'Емоція',
+  'charts.count': 'Записів',
+  'charts.average': 'Середня',
 
   'settings.language': 'Мова',
 

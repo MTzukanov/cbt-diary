@@ -65,6 +65,12 @@ export default {
   'charts.intensityNote': 'Päivän korkein arvio. Napauta tunnetta näyttääksesi tai piilottaaksesi sen viivan.',
   'charts.pickEmotions': 'Napauta yllä olevaa tunnetta piirtääksesi sen.',
   'charts.maxSeries': 'Voit verrata enintään {n} tunnetta kerrallaan.',
+  'charts.frequency': 'Kuinka usein kukin tunne esiintyi',
+  'charts.frequencyNote': 'Merkintöjen määrä, joissa tunne esiintyy, ja sen keskimääräinen arvio. Tästä näkyy vallitseva tunnetaustasi.',
+  'charts.avgValue': 'ka. {v}',
+  'charts.emotion': 'Tunne',
+  'charts.count': 'Merkintöjä',
+  'charts.average': 'Keskiarvo',
 
   'settings.language': 'Kieli',
 

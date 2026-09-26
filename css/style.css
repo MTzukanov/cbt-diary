@@ -382,3 +382,20 @@ textarea { resize: none; overflow: hidden; line-height: 1.45; }
 .chart-table thead th { color: var(--muted); font-weight: 600; }
 .chart-table tbody th { font-weight: 400; }
 .chart-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+
+.bars {
+  display: grid;
+  grid-template-columns: fit-content(9em) 1fr;
+  align-items: center;
+  gap: 8px 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* Rows share the list's grid so every bar starts at the same baseline. */
+.bar-row { display: contents; }
+.bar-label { overflow-wrap: anywhere; line-height: 1.25; font-size: 0.95rem; }
+/* Leave room after the longest bar for its value. */
+.bar-track { display: flex; align-items: center; gap: 8px; min-width: 0; padding-right: 5em; }
+.bar { flex: none; height: 14px; min-width: 3px; border-radius: 0 4px 4px 0; background: var(--series-1); }
+.bar-value { flex: none; white-space: nowrap; margin-right: -5em; font-size: 0.85rem; font-variant-numeric: tabular-nums; }
