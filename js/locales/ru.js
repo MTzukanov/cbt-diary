@@ -98,6 +98,11 @@ export default {
   'settings.entries': { one: '{n} запись', few: '{n} записи', many: '{n} записей', other: '{n} записи' },
   'settings.exportJson': 'Экспорт JSON',
   'settings.exportText': 'Экспорт текста',
+  'settings.exportRange': 'Текст за период',
+  'settings.exportRangeNote': 'Оставьте даты пустыми, чтобы выгрузить все записи.',
+  'settings.exportFrom': 'С',
+  'settings.exportTo': 'По',
+  'settings.exportNone': 'За выбранные даты записей нет.',
   'settings.import': 'Импорт JSON',
   'settings.importDone': 'Импортировано: новых {added}, обновлено {updated}.',
   'settings.importInvalid': 'Этот файл не является JSON-экспортом Дневника КПТ.',
@@ -105,6 +110,7 @@ export default {
   'settings.deleteAllConfirm': 'Удалить все записи ({n}) с этого устройства? Сначала сделайте экспорт, если хотите их сохранить.',
 
   'export.exported': 'Экспортировано {date}',
+  'export.period': 'Период: {range}',
 
   'ai.title': 'Запись с помощью ИИ-чата',
   'ai.link': 'Или разберите ситуацию в ИИ-чате',

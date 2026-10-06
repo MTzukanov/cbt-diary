@@ -98,6 +98,11 @@ export default {
   'settings.entries': { one: '{n} запис', few: '{n} записи', many: '{n} записів', other: '{n} запису' },
   'settings.exportJson': 'Експорт JSON',
   'settings.exportText': 'Експорт тексту',
+  'settings.exportRange': 'Текст за період',
+  'settings.exportRangeNote': 'Залиште дати порожніми, щоб вивантажити всі записи.',
+  'settings.exportFrom': 'З',
+  'settings.exportTo': 'По',
+  'settings.exportNone': 'За вибрані дати записів немає.',
   'settings.import': 'Імпорт JSON',
   'settings.importDone': 'Імпортовано: нових {added}, оновлено {updated}.',
   'settings.importInvalid': 'Цей файл не є JSON-експортом Щоденника КПТ.',
@@ -105,6 +110,7 @@ export default {
   'settings.deleteAllConfirm': 'Видалити всі записи ({n}) з цього пристрою? Спершу зробіть експорт, якщо хочете їх зберегти.',
 
   'export.exported': 'Експортовано {date}',
+  'export.period': 'Період: {range}',
 
   'ai.title': 'Запис за допомогою ШІ-чату',
   'ai.link': 'Або розберіть ситуацію в ШІ-чаті',

@@ -98,6 +98,11 @@ export default {
   'settings.entries': { one: '{n} entry', other: '{n} entries' },
   'settings.exportJson': 'Export JSON',
   'settings.exportText': 'Export text',
+  'settings.exportRange': 'Text for a period',
+  'settings.exportRangeNote': 'Leave the dates empty to export all entries.',
+  'settings.exportFrom': 'From',
+  'settings.exportTo': 'To',
+  'settings.exportNone': 'There are no entries for the selected dates.',
   'settings.import': 'Import JSON',
   'settings.importDone': 'Imported: {added} new, {updated} updated.',
   'settings.importInvalid': 'This file is not a CBT Diary JSON export.',
@@ -105,6 +110,7 @@ export default {
   'settings.deleteAllConfirm': 'Delete all {n} entries from this device? Export first if you want to keep them.',
 
   'export.exported': 'Exported {date}',
+  'export.period': 'Period: {range}',
 
   'ai.title': 'Write with an AI chat',
   'ai.link': 'Or talk it through with an AI chat',

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { toJSON, toPlainText, parseImport, mergeData, exportFileName } from '../js/export.js';
+import { toJSON, toPlainText, entriesInRange, parseImport, mergeData, exportFileName } from '../js/export.js';
 import { defaultData, normalizeEntry } from '../js/store.js';
 import { setLang } from '../js/i18n.js';
 
@@ -73,4 +73,28 @@ test('merge adds new entries, keeps newer edits and adds missing custom fields a
 
 test('export file name uses the local date', () => {
   assert.equal(exportFileName('json', new Date(2026, 0, 5)), 'cbt-diary-2026-01-05.json');
+});
+
+test('plain text can be limited to a date range, inclusive and in either order', () => {
+  setLang('en');
+  const data = sample();
+  data.entries.push(normalizeEntry({ id: 'c', datetime: '2026-09-28T07:30', values: { situation: 'Commute' } }));
+  const now = new Date('2026-09-29T10:00');
+
+  const day = toPlainText(data, now, { from: '2026-09-26', to: '2026-09-26' });
+  assert.match(day, /Breakfast/);
+  assert.match(day, /Watched a show/);
+  assert.doesNotMatch(day, /Commute/);
+  assert.match(day, /Period: September 26, 2026 – September 26, 2026/);
+
+  const reversed = toPlainText(data, now, { from: '2026-09-28', to: '2026-09-27' });
+  assert.match(reversed, /Commute/);
+  assert.doesNotMatch(reversed, /Breakfast/);
+
+  const openStart = toPlainText(data, now, { to: '2026-09-27' });
+  assert.match(openStart, /Period: … – September 27, 2026/);
+  assert.doesNotMatch(openStart, /Commute/);
+
+  assert.doesNotMatch(toPlainText(data, now), /Period:/);
+  assert.equal(entriesInRange(data.entries, '2026-09-29', '').length, 0);
 });

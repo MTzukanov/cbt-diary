@@ -98,6 +98,11 @@ export default {
   'settings.entries': { one: '{n} merkintä', other: '{n} merkintää' },
   'settings.exportJson': 'Vie JSON',
   'settings.exportText': 'Vie teksti',
+  'settings.exportRange': 'Teksti ajanjaksolta',
+  'settings.exportRangeNote': 'Jätä päivämäärät tyhjiksi, niin kaikki merkinnät viedään.',
+  'settings.exportFrom': 'Alkaen',
+  'settings.exportTo': 'Asti',
+  'settings.exportNone': 'Valituilta päiviltä ei ole merkintöjä.',
   'settings.import': 'Tuo JSON',
   'settings.importDone': 'Tuotu: {added} uutta, {updated} päivitetty.',
   'settings.importInvalid': 'Tämä tiedosto ei ole KKT-päiväkirjan JSON-vienti.',
@@ -105,6 +110,7 @@ export default {
   'settings.deleteAllConfirm': 'Poistetaanko kaikki merkinnät ({n}) tältä laitteelta? Vie ne ensin, jos haluat säilyttää ne.',
 
   'export.exported': 'Viety {date}',
+  'export.period': 'Ajanjakso: {range}',
 
   'ai.title': 'Kirjoita tekoälychatin avulla',
   'ai.link': 'Tai käy tilanne läpi tekoälychatissa',
