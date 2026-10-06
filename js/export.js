@@ -15,11 +15,34 @@ export function formatDateTime(datetime) {
   return new Intl.DateTimeFormat(getLang(), { dateStyle: 'full', timeStyle: 'short' }).format(d);
 }
 
+export function formatDate(date) {
+  const d = new Date(`${date}T00:00`);
+  if (Number.isNaN(d.getTime())) return date;
+  return new Intl.DateTimeFormat(getLang(), { dateStyle: 'long' }).format(d);
+}
+
+// Entries whose local date falls within from..to ("YYYY-MM-DD", both inclusive).
+// An empty bound leaves that side open; reversed bounds are swapped.
+export function entriesInRange(entries, from = '', to = '') {
+  if (from && to && from > to) [from, to] = [to, from];
+  return entries.filter((e) => {
+    const day = e.datetime.slice(0, 10);
+    return (!from || day >= from) && (!to || day <= to);
+  });
+}
+
 // Human-readable export in the current language, oldest entry first.
 // Hidden fields are included when they hold text, so nothing is lost.
-export function toPlainText(data, now = new Date()) {
-  const lines = [t('app.title'), t('export.exported', { date: formatDateTime(now) }), ''];
-  for (const e of sortedEntries(data.entries).reverse()) {
+// With a date range, only entries from those days are included.
+export function toPlainText(data, now = new Date(), { from = '', to = '' } = {}) {
+  const lines = [t('app.title'), t('export.exported', { date: formatDateTime(now) })];
+  if (from || to) {
+    if (from && to && from > to) [from, to] = [to, from];
+    const range = `${from ? formatDate(from) : '…'} – ${to ? formatDate(to) : '…'}`;
+    lines.push(t('export.period', { range }));
+  }
+  lines.push('');
+  for (const e of sortedEntries(entriesInRange(data.entries, from, to)).reverse()) {
     lines.push(`=== ${formatDateTime(e.datetime)} ===`, '');
     for (const f of data.settings.fields) {
       if (f.type === 'emotions') {

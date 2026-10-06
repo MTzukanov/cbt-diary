@@ -160,7 +160,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .field-label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.95rem; }
 .field-hint { display: block; margin: -2px 0 6px; font-size: 0.85rem; color: var(--muted); }
 
-input[type="text"], input[type="datetime-local"], select, textarea {
+input[type="text"], input[type="datetime-local"], input[type="date"], select, textarea {
   width: 100%;
   min-height: 44px;
   padding: 10px 12px;
@@ -267,6 +267,9 @@ textarea { resize: none; overflow: hidden; line-height: 1.45; }
 
 .button-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .button-grid .btn { width: 100%; padding: 0 10px; text-align: center; }
+.date-range { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.date-range label { display: block; min-width: 0; }
+.date-range span { display: block; margin-bottom: 4px; }
 .btn:disabled { opacity: 0.45; cursor: default; }
 
 /* Field manager */

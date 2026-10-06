@@ -2,7 +2,10 @@ import { t, getLang, LANGUAGES } from '../i18n.js';
 import { html } from '../dom.js';
 import { STORAGE_KEY, newId } from '../store.js';
 import { fieldLabel } from '../fields.js';
-import { toJSON, toPlainText, parseImport, mergeData, exportFileName, saveFile } from '../export.js';
+import { toJSON, toPlainText, entriesInRange, parseImport, mergeData, exportFileName, saveFile } from '../export.js';
+
+// Kept while the app is open, so a re-render (e.g. a language switch) keeps the dates.
+const exportRange = { from: '', to: '' };
 
 export function view(ctx) {
   const { store } = ctx;
@@ -46,6 +49,20 @@ export function view(ctx) {
         <h2>${t('settings.data')}</h2>
         <p class="muted small">${t('settings.dataNote')}</p>
         <p class="small">${t('settings.entries', { n: count })} · ${formatSize(storedBytes())}</p>
+        <div class="field">
+          <span class="field-label">${t('settings.exportRange')}</span>
+          <span class="field-hint">${t('settings.exportRangeNote')}</span>
+          <div class="date-range">
+            <label>
+              <span class="small muted">${t('settings.exportFrom')}</span>
+              <input type="date" id="export-from" value="${exportRange.from}">
+            </label>
+            <label>
+              <span class="small muted">${t('settings.exportTo')}</span>
+              <input type="date" id="export-to" value="${exportRange.to}">
+            </label>
+          </div>
+        </div>
         <div class="button-grid">
           <button class="btn" id="export-json" ${count ? '' : 'disabled'}>${t('settings.exportJson')}</button>
           <button class="btn" id="export-text" ${count ? '' : 'disabled'}>${t('settings.exportText')}</button>
@@ -72,9 +89,16 @@ export function view(ctx) {
       root.querySelector('#export-json').addEventListener('click', () =>
         saveFile(exportFileName('json'), toJSON(store.data), 'application/json'),
       );
-      root.querySelector('#export-text').addEventListener('click', () =>
-        saveFile(exportFileName('txt'), toPlainText(store.data), 'text/plain'),
-      );
+      for (const side of ['from', 'to']) {
+        root.querySelector(`#export-${side}`).addEventListener('change', (e) => (exportRange[side] = e.target.value));
+      }
+      root.querySelector('#export-text').addEventListener('click', () => {
+        if (!entriesInRange(store.data.entries, exportRange.from, exportRange.to).length) {
+          alert(t('settings.exportNone'));
+          return;
+        }
+        saveFile(exportFileName('txt'), toPlainText(store.data, new Date(), exportRange), 'text/plain');
+      });
 
       root.querySelector('#import').addEventListener('change', async (e) => {
         const file = e.target.files[0];
